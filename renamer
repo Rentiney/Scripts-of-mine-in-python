@@ -1,0 +1,17 @@
+import os
+
+directory = r"C:\Users\renti\Desktop\resize"
+gens = r"C:\Users\renti\Desktop\gens"
+names = []
+for fileToTake in os.listdir(gens):
+	a,b = os.path.splitext(fileToTake)
+	res = a + b
+	names.append(res)
+counter = 0
+for file in os.listdir(directory):
+
+	counter += 1
+	os.renames(file,names[counter])
+	if (counter > 15): break
+	
+	
